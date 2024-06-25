@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Programmingassignment
 {
     public partial class Form1 : Form
     {
-        string sqlstr = "";
+        function fn = new function();
+        string query;
 
-        SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\sizan\\Desktop\\sizan is studying\\assignement\\Programmingassignment\\database\\programmingpos.mdf;Integrated Security=True;Connect Timeout=30");
 
         public Form1()
         {
@@ -32,15 +34,11 @@ namespace Programmingassignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sqlstr = "SELECT * FROM LoginTable WHERE username = @username AND password = @password";
-            conn.Open();
-            using (SqlCommand cmd1 = new SqlCommand(sqlstr, conn))
+            
+            query = "SELECT * FROM LoginTable WHERE username = '"+textBox1.Text+"' AND password = '"+textBox2.Text+"'";
+            DataSet ds = fn.GetData(query);
             {
-                cmd1.Parameters.AddWithValue("@username", textBox1.Text);
-                cmd1.Parameters.AddWithValue("@password", textBox2.Text);
-
-                SqlDataReader dr1 = cmd1.ExecuteReader();
-                if (dr1.Read())
+                if (ds.Tables[0].Rows.Count > 0)
                 {
                     //this.Hide();
                     Form f2 = new FormHomePage();
@@ -51,7 +49,6 @@ namespace Programmingassignment
                     MessageBox.Show("You are not granted access.");
                 }
             }
-            conn.Close();
         }
     }
 }
