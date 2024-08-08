@@ -12,9 +12,12 @@ namespace Programmingassignment
 {
     public partial class FormHomePage : Form
     {
-        public FormHomePage()
+        private string userRole;
+
+        public FormHomePage(string role)
         {
             InitializeComponent();
+            userRole = role;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -26,16 +29,22 @@ namespace Programmingassignment
 
         private void button3_Click(object sender, EventArgs e)
         {
-            userControl2_additems_1.Visible = true;
-            userControl2_additems_1.BringToFront();
-
-
+            manageUC1.Visible = true;
+            manageUC1.BringToFront();
         }
 
         private void FormHomePage_Load(object sender, EventArgs e)
         {
-            userControl2_additems_1.Visible = false;
+            manageUC1.Visible = false;
             userControl3billing1.Visible = false;
+            if (userRole == "admin")
+            {
+                button3.Visible = true;
+            }
+            else
+            {
+                button3.Visible = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -75,19 +75,31 @@
       <DependentUpon>FormHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="function.cs" />
+    <Compile Include="ManageUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageUC.Designer.cs">
+      <DependentUpon>ManageUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QrPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QrPayment.Designer.cs">
+      <DependentUpon>QrPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwipeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwipeCard.Designer.cs">
+      <DependentUpon>SwipeCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl2%28additems%29.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl2%28additems%29.Designer.cs">
-      <DependentUpon>UserControl2%28additems%29.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl3billing.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +119,9 @@
     <EmbeddedResource Include="FormHomePage.resx">
       <DependentUpon>FormHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageUC.resx">
+      <DependentUpon>ManageUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,11 +131,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QrPayment.resx">
+      <DependentUpon>QrPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwipeCard.resx">
+      <DependentUpon>SwipeCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2%28additems%29.resx">
-      <DependentUpon>UserControl2%28additems%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl3billing.resx">
       <DependentUpon>UserControl3billing.cs</DependentUpon>
